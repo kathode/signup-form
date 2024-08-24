@@ -7,12 +7,55 @@ body {
   align-items: center;
   justify-content: center;
 
+  position: relative;
   overflow: hidden;
 }
 
+:root {
+  --color: #e4e3e3;
+}
+
 img {
+  position: absolute;
   width: 100%;
-  max-width: 100%;
-  object-fit: cover;
   transform: scaleX(-1);
+  z-index: -1;
+}
+
+.container {
+  border: 1rem solid var(--color);
+  border-radius: 0.75rem;
+
+  display: flex;
+  gap: 0.25rem;
+}
+
+.odin-container {
+  border-radius: 0.35rem;
+  outline: 5px solid var(--color);
+  position: relative;
+
+  width: 10rem;
+}
+
+.odin-container::after {
+  content: "";
+  right: -1rem;
+  top: 0;
+  height: 100%;
+  background-color: var(--color);
+  width: 1rem;
+
+  position: absolute;
+  z-index: -1;
+}
+
+.sign-up-container {
+  padding: 0.5rem;
+  background-color: var(--color);
+  outline: 2px solid var(--color);
+}
+
+.sign-up-container form > li {
+  list-style-type: none;
 }
