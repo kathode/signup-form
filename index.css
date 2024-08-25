@@ -5,6 +5,7 @@
 
 :root {
   --color: #f5e7e7;
+  --secondary-color: #a6888e;
 }
 
 * {
@@ -13,6 +14,9 @@
 
 body {
   margin: 0;
+
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.5;
 
   height: 100vh;
   width: 100vw;
@@ -33,7 +37,7 @@ img {
 }
 
 .container {
-  width: clamp(10rem, 80%, 50rem);
+  width: clamp(30rem, 50%, 50rem);
 
   border: 1rem solid var(--color);
   border-radius: 0.75rem;
@@ -47,6 +51,8 @@ img {
 
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  flex-direction: column-reverse;
   flex: 1;
 
   outline: 5px solid var(--color);
@@ -62,8 +68,8 @@ img {
 
 .odin-container::before {
   content: "";
-  background-color: rgba(80, 73, 73, 0.261);
-  filter: blur(4px);
+  background-color: rgba(79, 68, 68, 0.4);
+  backdrop-filter: blur(4px);
 
   top: 0;
   left: 0;
@@ -86,14 +92,34 @@ img {
   z-index: -1;
 }
 
+.logo-title {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.sign-up-text {
+  color: white;
+  font-weight: 600;
+  padding: 2rem 4rem;
+}
+
 .sign-up-container {
   background-color: var(--color);
 
   display: flex;
-  flex: 1;
+  justify-content: center;
+  flex: 0.5;
 
   outline: 2px solid var(--color);
-  padding: 0.5rem;
+  padding: 1rem;
+  padding-right: 0.25rem;
+}
+
+.sign-up-container form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .sign-up-container form > li {
@@ -101,4 +127,69 @@ img {
 
   display: flex;
   flex-direction: column;
+}
+
+.sign-up-container form > li label {
+  font-size: 0.5rem;
+  font-weight: 600;
+  color: var(--secondary-color);
+  text-transform: uppercase;
+}
+
+.sign-up-container form > li input {
+  border: 2px solid rgb(219, 205, 205);
+  border-radius: 0.25rem;
+  background-color: rgba(255, 255, 255, 0.86);
+
+  color: var(--secondary-color);
+
+  outline: 0px solid transparent;
+  padding: 0.25rem;
+
+  transition: outline 100ms ease-in-out;
+}
+
+.sign-up-container form > li input:focus {
+  outline: 3px solid #a6888e2b;
+}
+
+.sign-up-container form > li input:valid {
+  outline-color: rgba(0, 128, 0, 0.5);
+}
+
+.sign-up-container form > li input:invalid {
+  outline-color: rgba(255, 0, 0, 0.5);
+}
+
+form hr {
+  width: 98%;
+  border: 1px solid rgb(219, 205, 205);
+}
+
+form button {
+  cursor: pointer;
+  color: var(--secondary-color);
+}
+
+form button[type="submit"] {
+  background: white;
+  border: 2px solid rgb(219, 205, 205);
+  border-radius: 0.25rem;
+
+  padding: 0.25rem;
+
+  width: 100%;
+}
+
+form button[type="button"] {
+  background-color: transparent;
+  border: none;
+  font-size: 0.75rem;
+  padding: 0;
+  text-decoration: underline;
+}
+
+form p {
+  color: var(--secondary-color);
+  font-size: 0.75rem;
 }
