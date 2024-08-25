@@ -36,6 +36,26 @@ img {
   z-index: -1;
 }
 
+.artist-credit {
+  color: white;
+
+  font-size: 0.75rem;
+
+  bottom: 0;
+  left: 50%;
+  position: fixed;
+
+  transform: translateX(-50%);
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: inherit;
+  font-size: inherit;
+}
+
 .container {
   width: clamp(30rem, 50%, 50rem);
 
